@@ -4,9 +4,18 @@ console.log("app is running");
 
 //JSK = Javascript XML
 var template = React.createElement(
-  "h1",
-  null,
-  "Indecision App"
+     "div",
+     null,
+     React.createElement(
+          "h1",
+          null,
+          "Indecision App"
+     ),
+     React.createElement(
+          "p",
+          null,
+          "This is a info"
+     )
 );
 var appRoot = document.getElementById('app');
 
