@@ -1,51 +1,20 @@
 'use strict';
 
-console.log("app is running");
+var nameVar = 'Andrew';
+var nameVar = "Mike";
+console.log('nameVar', nameVar);
 
-//JSK = Javascript XML
-var profile = {
-      appName: 'Intentional Hustle',
-      appInfo: 'My Blog App'
-};
-var template = React.createElement(
-      'div',
-      null,
-      React.createElement(
-            'h1',
-            null,
-            profile.appName
-      ),
-      React.createElement(
-            'p',
-            null,
-            profile.appInfo
-      )
-);
+var nameLet = 'jen';
+nameLet = 'Julie';
+console.log('nameLet', nameLet);
 
-var userName = 'Andrew';
-var userAge = '24';
-var userLocation = 'Lagos';
-var templateTwo = React.createElement(
-      'div',
-      null,
-      React.createElement(
-            'h1',
-            null,
-            userName + '!'
-      ),
-      React.createElement(
-            'p',
-            null,
-            'Age: ',
-            userAge
-      ),
-      React.createElement(
-            'p',
-            null,
-            'Location: ',
-            userLocation
-      )
-);
-var appRoot = document.getElementById('app');
+var nameConst = 'Frank';
+console.log('nameConst', nameConst);
 
-ReactDOM.render(template, appRoot);
+function getPetName() {
+  var petName = 'Hal';
+  return petName;
+}
+
+getPetName();
+console.log(petName);
