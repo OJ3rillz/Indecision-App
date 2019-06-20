@@ -14,16 +14,27 @@ var template = (
 </div>
 );
 
-var userName = 'Andrew';
-var userAge = '24';
-var userLocation = 'Lagos'
+var uaer = { 
+      name: 'Andrew',
+      age = '24',
+      location: 'New York'
+};
+
+function getLocation(location) {
+      if (location) {
+            return <p>Location: {location}</p>;
+      } else {
+            return undefined;
+      }
+}
  var templateTwo =  (
  <div>
-       <h1>{userName + '!'}</h1>
-       <p>Age: {userAge}</p>
-       <p>Location: {userLocation}</p>
+       <h1>{user.name ? user.name : 'Anonymous' }</h1>
+       <p>Age: {user.age}</p>
+       {getLocation(user.location)}
  </div>
  );
+
 var appRoot = document.getElementById('app');
 
-ReactDOM.render(template, appRoot);
+ReactDOM.render(templateTwo, appRoot);
