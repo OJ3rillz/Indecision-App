@@ -13,59 +13,34 @@ var template = React.createElement(
       React.createElement(
             'h1',
             null,
-            profile.appName
+            app.title
+      ),
+      app.subtitle && React.createElement(
+            'p',
+            null,
+            app.subtitle
       ),
       React.createElement(
             'p',
             null,
-            profile.appInfo
-      )
-);
-
-var count = 0;
-var addOne = function addOne() {
-      count++;
-      renderCounterApp();
-};
-var minusOne = function minusOne() {
-      count--;
-      renderCounterApp();
-};
-var reset = function reset() {
-      count = 0;
-      renderCounterApp();
-};
-
-var appRoot = document.getElementById('app');
-
-var renderCounterApp = function renderCounterApp() {
-      var templateTwo = React.createElement(
-            'div',
+            app.options.length > 0 ? 'Here are you options' : 'No options'
+      ),
+      React.createElement(
+            'ol',
             null,
             React.createElement(
-                  'h1',
+                  'li',
                   null,
-                  'Count: ',
-                  count
+                  'Item one'
             ),
             React.createElement(
-                  'button',
-                  { onClick: addOne },
-                  '+1'
-            ),
-            React.createElement(
-                  'button',
-                  { onClick: minusOne },
-                  '-1'
-            ),
-            React.createElement(
-                  'button',
-                  { onClick: reset },
-                  'reset'
+                  'li',
+                  null,
+                  'Item two'
             )
-      );
+      ),
+      React.createElement('form', null)
+);
 
-      ReactDOM.render(templateTwo, appRoot);
-};
-
-renderCounterApp();
+var appRoot = document.getElementById('app');
+ReactDOM.render(template, appRoot);
