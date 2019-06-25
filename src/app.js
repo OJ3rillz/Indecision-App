@@ -1,12 +1,11 @@
 console.log("app is running");
 
  
-
-//JSK = Javascript XML
-var profile = {
-      appName: 'Intentional Hustle',
-      appInfo: 'My Blog App'
-}
+const app = {
+      title: 'Help Me Decide',
+      subtitle: 'Life or Death? Put it in my hands',
+      options: ['One', 'Two']
+};
 var template = (
  <div>
       <h1>{profile.appName}</h1>
@@ -16,15 +15,21 @@ var template = (
 
 let count = 0;
 const addOne = () => {
-   console.log('addOne');
+      count++;
+   renderCounterApp();
 };
 const minusOne = () => {
-      console.log('minusOne');
+      count--;
+      renderCounterApp();
 };
 const reset = () => {
-      console.log('reset')
-}
+    count = 0 ;
+    renderCounterApp();
+};
 
+const appRoot = document.getElementById('app');
+
+const renderCounterApp = () => {
 const templateTwo = ( 
       <div>
             <h1>Count: {count}</h1>
@@ -35,6 +40,7 @@ const templateTwo = (
 );
 
 
-const appRoot = document.getElementById('app');
-
 ReactDOM.render(templateTwo, appRoot);
+};
+
+renderCounterApp();
