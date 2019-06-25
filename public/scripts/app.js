@@ -1,20 +1,64 @@
 'use strict';
 
-var nameVar = 'Andrew';
-var nameVar = "Mike";
-console.log('nameVar', nameVar);
+console.log("app is running");
 
-var nameLet = 'jen';
-nameLet = 'Julie';
-console.log('nameLet', nameLet);
+//JSK = Javascript XML
+var profile = {
+      appName: 'Intentional Hustle',
+      appInfo: 'My Blog App'
+};
+var template = React.createElement(
+      'div',
+      null,
+      React.createElement(
+            'h1',
+            null,
+            profile.appName
+      ),
+      React.createElement(
+            'p',
+            null,
+            profile.appInfo
+      )
+);
 
-var nameConst = 'Frank';
-console.log('nameConst', nameConst);
+var count = 0;
+var addOne = function addOne() {
+      console.log('addOne');
+};
+var minusOne = function minusOne() {
+      console.log('minusOne');
+};
+var reset = function reset() {
+      console.log('reset');
+};
 
-function getPetName() {
-  var petName = 'Hal';
-  return petName;
-}
+var templateTwo = React.createElement(
+      'div',
+      null,
+      React.createElement(
+            'h1',
+            null,
+            'Count: ',
+            count
+      ),
+      React.createElement(
+            'button',
+            { onClick: addOne },
+            '+1'
+      ),
+      React.createElement(
+            'button',
+            { onClick: minusOne },
+            '-1'
+      ),
+      React.createElement(
+            'button',
+            { onClick: reset },
+            'reset'
+      )
+);
 
-getPetName();
-console.log(petName);
+var appRoot = document.getElementById('app');
+
+ReactDOM.render(templateTwo, appRoot);
