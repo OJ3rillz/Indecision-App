@@ -26,6 +26,7 @@ const onRemoveAll = () => {
 
 const appRoot = document.getElementById('app');
 
+const numbers = [55, 101, 1000]
 const render =  () => {
 const template = (
       <div>
@@ -34,9 +35,18 @@ const template = (
            <p>{app.options.length > 0 ? 'Here are you options'  :  'No options'}</p>
            <p>{app.options.length}</p>
            <button onClick={onRemoveAll}>Remove All</button>
+           {
+                 /*numbers.map((number) => {
+                       return <p key={number}>Number: {number}</p>
+                 })*/
+           }
+           
            <ol>
-              <li>Item one</li>
-              <li>Item two</li>
+              {
+                    app.options.map((option) => {
+                          return <li key={option}>{option}</li>
+                    })
+            }
            </ol>
      
            <form onSubmit={onFormSubmit}>
