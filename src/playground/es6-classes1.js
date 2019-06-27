@@ -3,8 +3,10 @@ class Person {
        this.name = name;
    }
    getGreating() {
-
-      return ``
+      //using template strings is easier i.e
+      return `Hi. I am ${this.name}!`
+      //instead of
+      // return 'Hi.I am '+ this.name + '!' 
    }
 }
 
