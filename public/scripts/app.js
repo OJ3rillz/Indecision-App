@@ -1,41 +1,31 @@
 'use strict';
 
-var app = {
-      title: 'Visibility Toggle'
-};
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var visibility = false;
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var toggleVisibility = function toggleVisibility() {
-      visibility = !visibility;
-      render();
-};
+var Person = function () {
+   function Person() {
+      var name = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'Anonymous';
 
-var render = function render() {
-      var template = React.createElement(
-            'div',
-            null,
-            React.createElement(
-                  'h1',
-                  null,
-                  app.title
-            ),
-            React.createElement(
-                  'button',
-                  { onClick: toggleVisibility },
-                  visibility ? 'Hide Details' : 'Show Details'
-            ),
-            visibility && React.createElement(
-                  'div',
-                  null,
-                  React.createElement(
-                        'p',
-                        null,
-                        'This is what is hidden'
-                  )
-            )
-      );
+      _classCallCheck(this, Person);
 
-      ReactDOM.render(template, document.getElementById('app'));
-};
-render();
+      this.name = name;
+   }
+
+   _createClass(Person, [{
+      key: 'getGreating',
+      value: function getGreating() {
+
+         return '';
+      }
+   }]);
+
+   return Person;
+}();
+
+var me = new Person('Akinleye Oluwatimilehin');
+console.log(me.getGreating());
+
+var others = new Person();
+console.log(others.getGreating());
