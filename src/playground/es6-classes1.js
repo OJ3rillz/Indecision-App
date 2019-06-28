@@ -15,8 +15,26 @@ class Person {
    }
 }
 
-const me = new Person('Akinleye Oluwatimilehin', 24);
+class Student extends Person {
+     constructor(name, age, major) {
+      super(name, age);
+      this.major = major;
+     }
+     hasMajor() {
+      return !!this.major;
+     } 
+     getDescription() {
+        let description = super.getDescription();
+        if (this.hasMajor()) {
+         description += ` Their major is ${this.major}.`;
+        }
+
+        return description;
+     }
+}
+
+const me = new Student('Akinleye Oluwatimilehin', 24, 'Agric Engineering');
 console.log(me.getDescription());
 
-const others = new Person()
+const others = new Student()
 console.log(others.getDescription());
