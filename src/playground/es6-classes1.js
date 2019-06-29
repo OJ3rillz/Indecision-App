@@ -32,6 +32,12 @@ class Student extends Person {
         return description;
      }
 }
+class Traveler extends Person {
+     constructor (name, age, major, location) {
+        super(name, age, major);
+        this.location = location;
+     }
+}
 
 const me = new Student('Akinleye Oluwatimilehin', 24, 'Agric Engineering');
 console.log(me.getDescription());

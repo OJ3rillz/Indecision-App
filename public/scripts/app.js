@@ -71,6 +71,21 @@ var Student = function (_Person) {
    return Student;
 }(Person);
 
+var Traveler = function (_Person2) {
+   _inherits(Traveler, _Person2);
+
+   function Traveler(name, age, major, location) {
+      _classCallCheck(this, Traveler);
+
+      var _this2 = _possibleConstructorReturn(this, (Traveler.__proto__ || Object.getPrototypeOf(Traveler)).call(this, name, age, major));
+
+      _this2.location = location;
+      return _this2;
+   }
+
+   return Traveler;
+}(Person);
+
 var me = new Student('Akinleye Oluwatimilehin', 24, 'Agric Engineering');
 console.log(me.getDescription());
 
