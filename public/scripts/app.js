@@ -60,6 +60,7 @@ var Student = function (_Person) {
       key: 'getDescription',
       value: function getDescription() {
          var description = _get(Student.prototype.__proto__ || Object.getPrototypeOf(Student.prototype), 'getDescription', this).call(this);
+
          if (this.hasMajor()) {
             description += ' Their major is ' + this.major + '.';
          }
@@ -74,20 +75,32 @@ var Student = function (_Person) {
 var Traveler = function (_Person2) {
    _inherits(Traveler, _Person2);
 
-   function Traveler(name, age, major, location) {
+   function Traveler(name, age, homeLocation) {
       _classCallCheck(this, Traveler);
 
-      var _this2 = _possibleConstructorReturn(this, (Traveler.__proto__ || Object.getPrototypeOf(Traveler)).call(this, name, age, major));
+      var _this2 = _possibleConstructorReturn(this, (Traveler.__proto__ || Object.getPrototypeOf(Traveler)).call(this, name, age));
 
-      _this2.location = location;
+      _this2.homeLocation = homeLocation;
       return _this2;
    }
+
+   _createClass(Traveler, [{
+      key: 'getGreating',
+      value: function getGreating() {
+         var greating = _get(Traveler.prototype.__proto__ || Object.getPrototypeOf(Traveler.prototype), 'getGreating', this).call(this);
+
+         if (this.homeLocation) {
+            greating += 'I\'m visiting from ' + this.location;
+         }
+         return greating;
+      }
+   }]);
 
    return Traveler;
 }(Person);
 
-var me = new Student('Akinleye Oluwatimilehin', 24, 'Agric Engineering');
-console.log(me.getDescription());
+var me = new Traveler('Akinleye Oluwatimilehin', 24, 'Agric Engineering');
+console.log(me.getGreating());
 
-var others = new Student();
-console.log(others.getDescription());
+var others = new Traveler();
+console.log(others.getGreating());
