@@ -27,22 +27,29 @@ class Header extends React.Component{
 }
 
 class Action extends React.Component {
+      handlePick() {
+            alert('handlePick');
+      }
       render() {
             return (
                   <div>
-                  <button>What should i do?</button>
+                  <button onClick={this.handlePick}>What should i do?</button>
                   </div>
             );
       }
 }
 
 class Options extends React.Component {
+      handleRemoveAll() {
+            alert('Remove them');
+      }
       render() {
             return (
                   <div>
                   {
       this.props.options.map((option) => <Option key={option} optionText={option} />)
                         }
+            <button onClick={this.handleRemoveAll}> I want to remove all</button>
                   </div>
             );
       }
