@@ -1,6 +1,10 @@
-const app = {
-      title: 'Visibility Toggle'
-};
+
+
+
+ReactDOM.render(<Counter />, document.getElementById('app'));
+
+// VisibilityToggle - render, constructor, handleToggleVisibility
+// visibility -> false
 
 let visibility = false;
 
