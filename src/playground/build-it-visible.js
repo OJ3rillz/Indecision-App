@@ -1,4 +1,25 @@
+class VisibilityToggle extends React.Component {
+  constructor(props) {
+    super(props);
 
+  }
+
+  render () {
+    return (
+      <div>
+        <h1>Visibility Toggle</h1>
+        <button onClick={toggleVisibility}>
+          {visibility ? 'Hide Details' : 'Show Details'}
+        </button>
+        {visibility && (
+              <div>
+              <p>This is what is hidden</p>
+              </div>
+        )}
+      </div>
+    )
+  }
+}
 
 
 ReactDOM.render(<Counter />, document.getElementById('app'));
