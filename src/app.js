@@ -2,6 +2,7 @@ class IndecisionApp extends React.Component {
       constructor(props) {
             super(props);
             this.handleDeleteOptions = this.handleDeleteOptions.bind(this);
+            this.handlePick = this.handlePick.bind(this);
             this.state = {
                   options: ['Thing one', 'Thing two', 'Thing four']
             };
@@ -13,6 +14,11 @@ class IndecisionApp extends React.Component {
                   };
             });
       }
+      handlePick() {
+            const randomNum = Math.floor(Math.random() * this.state.options.length);
+            const option = this.state.options[randomNum];
+            alert(option);
+      }
       render() {
             const title = "Indecision";
             const subtitle = "Life or Death? Put it in my hands"
@@ -20,7 +26,10 @@ class IndecisionApp extends React.Component {
             return (
                   <div>
                     <Header title={title} subtitle={subtitle} />
-                    <Action hasOptions={this.state.options.length > 0} />
+                    <Action 
+                    hasOptions={this.state.options.length > 0} 
+                    handlePick={this.handlePick}
+                    />
                     <Options 
                        options={this.state.options} 
                       handleDeleteOptions={this.handleDeleteOptions}
@@ -43,14 +52,11 @@ class Header extends React.Component{
 }
 
 class Action extends React.Component {
-      handlePick() {
-            alert('handlePick');
-      }
       render() {
             return (
                   <div>
                   <button 
-                  onClick={this.handlePick}
+                  onClick={this.props.handlePick}
                   disable={this.props.hasOptions}
                   >
                   
