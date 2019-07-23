@@ -5,6 +5,15 @@ class IndecisionApp extends React.Component {
                   options: ['Thing one', 'Thing two', 'Thing four']
             };
       }
+      handleDeleteOptions() {
+            this.setState(() => {
+                  return {
+                        options: []
+                  };
+            });
+      }
+      // handleDeleteOptions
+
       render() {
             const title = "Indecision";
             const subtitle = "Life or Death? Put it in my hands"
@@ -12,8 +21,10 @@ class IndecisionApp extends React.Component {
             return (
                   <div>
                     <Header title={title} subtitle={subtitle} />
-                    <Action />
-                    <Options options={this.state.options} />
+                    <Action hasOptions={this.state.options.length > 0} />
+                    <Options options={this.state.options} 
+                      handleDeleteOptions={this.handleDeleteOptions}
+                    />
                     <AddOption />
                   </div>
             )
@@ -38,20 +49,18 @@ class Action extends React.Component {
       render() {
             return (
                   <div>
-                  <button onClick={this.handlePick}>What should i do?</button>
+                  <button 
+                  onClick={this.handlePick}
+                  disable={this.props.hasOptions}
+                  >
+                  
+                  What should i do?</button>
                   </div>
             );
       }
 }
 
 class Options extends React.Component {
-      constructor(props) {
-            super(props);
-            this.handleRemoveAll = this.handleRemoveAll.bind(this);
-      }
-      handleRemoveAll() {
-            alert('Remove them');
-      }
       render() {
             return (
                   <div>
