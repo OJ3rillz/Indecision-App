@@ -15,7 +15,7 @@ class IndecisionApp extends React.Component {
                   };
             });
       }
-      handlePick() {
+      handlePick() {  
             const randomNum = Math.floor(Math.random() * this.state.options.length);
             const option = this.state.options[randomNum];
             alert(option);
