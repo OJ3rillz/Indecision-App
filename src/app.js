@@ -10,7 +10,7 @@ class IndecisionApp extends React.Component {
             };
       }
       componentDidMount() {
-        try {
+        try {  
           const json = localStorage.getItem('options');
           const options = JSON.parse(json);
 
@@ -170,6 +170,7 @@ const Options = (props) => {
 //         );
 //       }
 //     }
+
     
 const Option = (props) => {
       return (
