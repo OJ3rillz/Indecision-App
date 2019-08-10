@@ -13,17 +13,17 @@ class VisibilityToggle extends React.Component {
       };
     });
   }
-  render () {
+  render() {
     return (
       <div>
         <h1>Visibility Toggle</h1>
         <button onClick={this.handleToggleVisibility}>
-          {this.state.visibility ? 'Hide Details' : 'Show Details'}
+          {this.state.visibility ? 'Hide details' : 'Show details'}
         </button>
         {this.state.visibility && (
-              <div>
-               <p>This is what is hidden</p>
-              </div> 
+          <div>
+            <p>Hey. These are some details you can now see!</p>
+          </div>
         )}
       </div>
     );
@@ -31,32 +31,3 @@ class VisibilityToggle extends React.Component {
 }
 
 ReactDOM.render(<VisibilityToggle />, document.getElementById('app'));
-
-// // VisibilityToggle - render, constructor, handleToggleVisibility
-// // visibility -> false
-
-// let visibility = false;
-
-// const toggleVisibility = () => {
-//       visibility = !visibility;
-//       render();
-// }
-
-// const render = () => {
-// const template = (
-//       <div>
-//         <h1>{app.title}</h1>
-//         <button onClick={toggleVisibility}>
-//           {visibility ? 'Hide Details' : 'Show Details'}
-//         </button>
-//         {visibility && (
-//               <div>
-//               <p>This is what is hidden</p>
-//               </div>
-//         )}
-//       </div>
-// );
-
-// ReactDOM.render(template, document.getElementById('app'));
-// };
-// render();
